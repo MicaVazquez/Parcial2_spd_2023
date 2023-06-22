@@ -19,7 +19,11 @@ Se imprime el valor de la temperatura obtenida utilizando miLcd.print(temperatur
 Se coloca el cursor en la posición (10,1) del LCD utilizando miLcd.setCursor(10,1).<br>
 Se llama a la función printEstacion() para imprimir el nombre de la estación correspondiente según la temperatura actual.<br>
 
-Pero si el sistema no está activado (sistemaActivado == false), se procede a desactivar el servo motor, establecer el estado de los LEDs en 0 y borrar el contenido del LCD.
+Pero si el sistema no está activado (sistemaActivado == false), se procede a desactivar el servo motor, establecer el estado de los LEDs en 0 y borrar el contenido del LCD.<br>
+<img src="./img/sist_incendio_desactivado.png" ><br>
+Sistema de incendio cuando esta desactivado.<br>
+<img src="./img/sistema_de_alarma.png" ><br>
+Sistema de alarma activado y servo en movimiento.<br>
  </p><br>
 
 ```bash
@@ -288,6 +292,7 @@ void printAlerta()
 * void printEstacionesPorControl(): Esta función se encarga de imprimir la información de una estación seleccionada a través del control remoto infrarrojo. Al igual que en manejarEntradaControlRemoto(), utiliza la biblioteca IrReceiver para obtener el valor decodificado del control remoto. Según el valor recibido, establece un índice para seleccionar una estación específica del arreglo estaciones[] y la imprime en el LCD. También hay un retraso de 100 milisegundos al final.
 
 * void printAlerta(): Esta función se encarga de imprimir una alerta en el LCD. Simplemente muestra el nombre de la estación correspondiente a una alerta (por ejemplo, "INCENDIO") en la segunda línea del LCD y hay un retraso de 100 milisegundos al final.
+## Circuito Esquematico
 
 ## Link del proyecto
 [Parcial 2 SPD](https://www.tinkercad.com/things/jMK0zgReULG)
