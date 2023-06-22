@@ -31,6 +31,10 @@ char estaciones[][10] = {"Invierno", "Otonio", "Primavera", "Verano","INCENDIO",
 //CONTROL REMOTO
 #define Tecla_1 0xEF10BF00
 #define Tecla_2 0xEE11BF00
+#define Tecla_3 0xED12BF00
+#define Tecla_4 0xEB14BF00
+#define Tecla_5 0xEA15BF00
+#define Tecla_6 0xE916BF00
 //la biblioteca IRremote, que proporciona las funciones necesarias para recibir y decodificar señales infrarrojas
 int IR = 11;// el receptor infrarrojo está conectado al pin 11 de la placa Arduino.
 bool sistemaActivado = false;
@@ -62,11 +66,13 @@ void loop()
     {
       establecerEstadoLeds(1, 0);
       activarServo();
+      //printAlerta();
     }
     else 
     {
       establecerEstadoLeds(0, 1);
       desactivarServo();
+      //printEstacionesPorControl();
     }
 
     if(actualizarLcd)
@@ -194,4 +200,45 @@ void manejarEntradaControlRemoto()
     IrReceiver.resume();//seguir recibiendo señales
   }
 
+}
+
+void printEstacionesPorControl()
+{
+   miLcd.setCursor(0,1);
+   miLcd.print(estaciones[5]);
+   miLcd.setCursor(0,1);
+   int index;
+  
+  
+    unsigned long valor = IrReceiver.decodedIRData.decodedRawData;//asigna el valor de la señal infrarroja decodificada 
+    
+    if (valor == Tecla_3) 
+    {
+      index = 0;
+    } 
+    
+    if (valor == Tecla_4) 
+    {
+      index = 1;
+    }
+    
+    if (valor == Tecla_5) 
+    {
+      index = 2;
+    }
+    
+    if (valor == Tecla_6) 
+    {
+      index = 3;
+    }
+    IrReceiver.resume();//seguir recibiendo señales
+  
+  miLcd.print(estaciones[index]);
+   delay(100);
+}
+void printAlerta()
+{
+  miLcd.setCursor(0,1);
+  miLcd.print(estaciones[4]);
+  delay(100);
 }
