@@ -293,7 +293,7 @@ void printAlerta()
 
 * void printAlerta(): Esta función se encarga de imprimir una alerta en el LCD. Simplemente muestra el nombre de la estación correspondiente a una alerta (por ejemplo, "INCENDIO") en la segunda línea del LCD y hay un retraso de 100 milisegundos al final.
 ## Circuito Esquematico
-
+![Circuito](https://github.com/MicaVazquez/Parcial2_spd_2023/assets/98616457/02986553-b081-458d-8c85-3d619f32cb71)
 ## Link del proyecto
 [Parcial 2 SPD](https://www.tinkercad.com/things/jMK0zgReULG)
 
