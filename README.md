@@ -95,13 +95,11 @@ void loop()
     {
       establecerEstadoLeds(1, 0);
       activarServo();
-      //printAlerta();
     }
     else 
     {
       establecerEstadoLeds(0, 1);
       desactivarServo();
-      //printEstacionesPorControl();
     }
 
     if(actualizarLcd)
@@ -231,46 +229,6 @@ void manejarEntradaControlRemoto()
 
 }
 
-void printEstacionesPorControl()
-{
-   miLcd.setCursor(0,1);
-   miLcd.print(estaciones[5]);
-   miLcd.setCursor(0,1);
-   int index;
-  
-  
-    unsigned long valor = IrReceiver.decodedIRData.decodedRawData;//asigna el valor de la señal infrarroja decodificada 
-    
-    if (valor == Tecla_3) 
-    {
-      index = 0;
-    } 
-    
-    if (valor == Tecla_4) 
-    {
-      index = 1;
-    }
-    
-    if (valor == Tecla_5) 
-    {
-      index = 2;
-    }
-    
-    if (valor == Tecla_6) 
-    {
-      index = 3;
-    }
-    IrReceiver.resume();//seguir recibiendo señales
-  
-  miLcd.print(estaciones[index]);
-   delay(100);
-}
-void printAlerta()
-{
-  miLcd.setCursor(0,1);
-  miLcd.print(estaciones[4]);
-  delay(100);
-}
 ```
 
 
