@@ -247,9 +247,6 @@ void manejarEntradaControlRemoto()
 
 * void manejarEntradaControlRemoto(): Esta función se encarga de manejar las entradas de un control remoto infrarrojo. Utiliza la biblioteca IrReceiver para decodificar las señales infrarrojas. Si se ha decodificado una señal, obtiene el valor decodificado y realiza una serie de comparaciones con diferentes teclas del control remoto. Dependiendo del valor recibido, establece el estado del sistema y actualiza una variable actualizarLcd. Finalmente, llama a IrReceiver.resume() para seguir recibiendo señales.
 
-* void printEstacionesPorControl(): Esta función se encarga de imprimir la información de una estación seleccionada a través del control remoto infrarrojo. Al igual que en manejarEntradaControlRemoto(), utiliza la biblioteca IrReceiver para obtener el valor decodificado del control remoto. Según el valor recibido, establece un índice para seleccionar una estación específica del arreglo estaciones[] y la imprime en el LCD. También hay un retraso de 100 milisegundos al final.
-
-* void printAlerta(): Esta función se encarga de imprimir una alerta en el LCD. Simplemente muestra el nombre de la estación correspondiente a una alerta (por ejemplo, "INCENDIO") en la segunda línea del LCD y hay un retraso de 100 milisegundos al final.
 ## Circuito Esquematico
 ![Circuito](https://github.com/MicaVazquez/Parcial2_spd_2023/assets/98616457/02986553-b081-458d-8c85-3d619f32cb71)
 ## Link del proyecto
